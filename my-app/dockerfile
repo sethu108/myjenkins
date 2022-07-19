@@ -1,4 +1,4 @@
 FROM openjdk:8
 EXPOSE 8080
-ADD target/myjenkins.jar myjenkins.jar
-ENDPOINT ["java", "-jar","/myjenkins.jar"]
+ADD ./target/myjenkins.jar myjenkins.jar
+ENTRYPOINT ["java", "-cp","myjenkins.jar","com.mycompany.app.App"]
